@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>Demo</h1>
+        <span class="menu-spacer"></span>
+        <div class="right">
+            <a mat-button [routerLink]="''"> Logout </a>
+            <a mat-button [routerLink]="''"> Lockout </a>
+        </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+        <div>
+            <a mat-button routerLink="../../dashboard"> Dashboard </a>
+            <a mat-button routerLink="../../chat"> Inbox </a>
+            <a mat-button routerLink="../../charts" class="active-nav"> Charts </a>
+
+        </div>
+        <div class="mg-80">
+                <a mat-button routerLink="../" > Statistics </a>
+                <a mat-button routerLink="../performance" class="active-nav"> Performance </a>
+    
+            </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div>
+
+    <mat-sidenav-container class="tp-container">
+        <mat-sidenav mode="side" opened>
+            <section class=" tp-section active">
+                <a mat-list-item> Accounts </a>
+            </section>
+            <section class="tp-section">
+                <a mat-list-item> Appointment </a>
+            </section>
+            <section class="tp-section">
+                <a mat-list-item> PhoneBook </a>
+            </section>
+            <section class="tp-section">
+                <a mat-list-item> Settings </a>
+            </section>
+        </mat-sidenav>
+        <mat-card class="page-section">
+         <div class="row">
+                <div class="col-md-6">
+                        <div>
+                                <div>
+                                    <div style="display: block">
+                                        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                                            [chartType]="doughnutChartType">
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                <div class="col-md-6">
+                        <div>
+                                <div>
+                                  <div class="chart">
+                                    <canvas baseChart
+                                      [data]="pieChartData"
+                                      [labels]="pieChartLabels"
+                                      [chartType]="pieChartType"
+                                      [options]="pieChartOptions"
+                                      [plugins]="pieChartPlugins"
+                                      [colors]="pieChartColors"
+                                      [legend]="pieChartLegend">
+                                    </canvas>
+                                  </div>
+                                </div>
+                              </div>
+                         
+                </div>
+         </div>
+       
+        </mat-card>
+    </mat-sidenav-container>
+
+</div>

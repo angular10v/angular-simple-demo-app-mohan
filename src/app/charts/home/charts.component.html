@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
         <mat-toolbar-row>
             <button mat-icon-button>
-                <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+                <mat-icon >menu</mat-icon>
             </button>
-            <h1>Mohan</h1>
+            <h1>Demo</h1>
             <span class="menu-spacer"></span>
             <div class="right">
                 <a mat-button [routerLink]="''"> Logout </a>
@@ -18,6 +18,11 @@
                 <a mat-button routerLink="../charts" class="active-nav"> Charts </a>
     
             </div>
+            <div class="mg-80">
+                    <a mat-button routerLink="statistics" class="active-nav"> Statistics </a>
+                    <a mat-button routerLink="../performance"> Performance </a>
+        
+                </div>
         </mat-toolbar-row>
     </mat-toolbar>
     <div>
@@ -38,21 +43,25 @@
                 </section>
             </mat-sidenav>
             <mat-card class="page-section">
-                    <div>
-                            <div>
-                              <div style="display: block">
-                                <canvas baseChart
-                                  [datasets]="barChartData"
-                                  [labels]="barChartLabels"
-                                  [options]="barChartOptions"
-                                  [plugins]="barChartPlugins"
-                                  [legend]="barChartLegend"
-                                  [chartType]="barChartType">
-                                </canvas>
-                              </div>
-                              <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
-                            </div>
-                          </div>
+                   <div class="row">
+                       <div class="col-md-8 center">
+                            <div >
+                                    <div>
+                                      <div style="display: block">
+                                        <canvas baseChart
+                                          [datasets]="barChartData"
+                                          [labels]="barChartLabels"
+                                          [options]="barChartOptions"
+                                          [plugins]="barChartPlugins"
+                                          [legend]="barChartLegend"
+                                          [chartType]="barChartType">
+                                        </canvas>
+                                      </div>
+                                      <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+                                    </div>
+                                  </div>
+                       </div>
+                   </div>
             </mat-card>
         </mat-sidenav-container>
     
