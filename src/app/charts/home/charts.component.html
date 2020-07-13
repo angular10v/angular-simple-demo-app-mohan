@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button>
+                <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+            </button>
+            <h1>Mohan</h1>
+            <span class="menu-spacer"></span>
+            <div class="right">
+                <a mat-button [routerLink]="''"> Logout </a>
+                <a mat-button [routerLink]="''"> Lockout </a>
+            </div>
+        </mat-toolbar-row>
+    
+        <mat-toolbar-row>
+            <div>
+                <a mat-button routerLink="dashboard" > Dashboard </a>
+                <a mat-button routerLink="../chat" > Inbox </a>
+                <a mat-button routerLink="../charts" class="active-nav"> Charts </a>
+    
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div>
+    
+        <mat-sidenav-container class="tp-container">
+            <mat-sidenav mode="side" opened>
+                <section class=" tp-section active">
+                    <a mat-list-item> Accounts </a>
+                </section>
+                <section class="tp-section">
+                    <a mat-list-item> Appointment </a>
+                </section>
+                <section class="tp-section">
+                    <a mat-list-item> PhoneBook </a>
+                </section>
+                <section class="tp-section">
+                    <a mat-list-item> Settings </a>
+                </section>
+            </mat-sidenav>
+            <mat-card class="page-section">
+                    <div>
+                            <div>
+                              <div style="display: block">
+                                <canvas baseChart
+                                  [datasets]="barChartData"
+                                  [labels]="barChartLabels"
+                                  [options]="barChartOptions"
+                                  [plugins]="barChartPlugins"
+                                  [legend]="barChartLegend"
+                                  [chartType]="barChartType">
+                                </canvas>
+                              </div>
+                              <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+                            </div>
+                          </div>
+            </mat-card>
+        </mat-sidenav-container>
+    
+    </div>

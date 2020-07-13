@@ -1,0 +1,14 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;}
+.mat-card{
+    width: 500px;
+}
+.form-tag mat-form-field {
+    width: 100%;
+}
+.mat-card-header-text mat-card-title{
+    text-align: center;
+}
